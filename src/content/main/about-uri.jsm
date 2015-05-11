@@ -66,8 +66,8 @@ function getURI(aURI) {
 
 let AboutRequestPolicy = (function() {
   let self = {
-    classDescription: "about:requestpolicy",
-    contractID: "@mozilla.org/network/protocol/about;1?what=requestpolicy",
+    classDescription: "about:rpcontinued",
+    contractID: "@mozilla.org/network/protocol/about;1?what=rpcontinued",
     classID: Components.ID("{ad30f46c-42a6-45cd-ad0b-08b37f87435a}"),
     QueryInterface: XPCOMUtils.generateQI([Ci.nsIAboutModule]),
 

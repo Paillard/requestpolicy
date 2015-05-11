@@ -98,7 +98,7 @@ let rpService = (function() {
   // TODO: move to window manager
   function showWelcomeWindow() {
     if (!rpPrefBranch.getBoolPref("welcomeWindowShown")) {
-      var url = "about:requestpolicy?setup";
+      var url = "about:rpcontinued?setup";
 
       var wm = Cc['@mozilla.org/appshell/window-mediator;1'].
           getService(Ci.nsIWindowMediator);

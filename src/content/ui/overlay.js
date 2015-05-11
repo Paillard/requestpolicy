@@ -1186,9 +1186,9 @@ requestpolicy.overlay = (function() {
     popupElement.hidePopup();
   }
 
-  self.openPrefs = openLinkInNewTab.bind(this, "about:requestpolicy", true);
+  self.openPrefs = openLinkInNewTab.bind(this, "about:rpcontinued", true);
   self.openPolicyManager = openLinkInNewTab.bind(this,
-      "about:requestpolicy?yourpolicy", true);
+      "about:rpcontinued?yourpolicy", true);
   self.openHelp = openLinkInNewTab.bind(this,
       "https://github.com/RequestPolicyContinued/requestpolicy/wiki/Help-and-Support");
 

@@ -142,7 +142,7 @@ AMHelper.prototype.setCategory = function(id) {
 AMHelper.prototype.getSetupTabIndex = function() {
   var self = this;
   return self.findTabIndex(function(tab) {
-    return self.getTabHref(tab) === "about:requestpolicy?setup";
+    return self.getTabHref(tab) === "about:rpcontinued?setup";
   });
 }
 

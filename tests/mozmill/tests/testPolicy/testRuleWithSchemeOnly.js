@@ -84,7 +84,7 @@ function getTableRowElements(aTbody, aDestinationString) {
  * the scheme SCHEME.
  */
 function addRule(aIsAllowRule) {
-  controller.open("about:requestpolicy?yourpolicy");
+  controller.open("about:rpcontinued?yourpolicy");
   controller.waitForPageLoad();
 
   var doc = controller.window.content.document;
@@ -148,7 +148,7 @@ function addRule(aIsAllowRule) {
  * Remove all rules that specify the scheme SCHEME.
  */
 function removeRules() {
-  controller.open("about:requestpolicy?yourpolicy");
+  controller.open("about:rpcontinued?yourpolicy");
   controller.waitForPageLoad();
 
   var doc = controller.window.content.document;
