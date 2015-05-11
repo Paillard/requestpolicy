@@ -26,7 +26,7 @@ const Cc = Components.classes;
 const Cu = Components.utils;
 const Cr = Components.results;
 
-let EXPORTED_SYMBOLS = ["AboutRequestPolicy"];
+let EXPORTED_SYMBOLS = ["AboutRPContinued"];
 
 Components.utils.import("resource://gre/modules/Services.jsm");
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
@@ -64,7 +64,7 @@ function getURI(aURI) {
 
 
 
-let AboutRequestPolicy = (function() {
+let AboutRPContinued = (function() {
   let self = {
     classDescription: "about:rpcontinued",
     contractID: "@mozilla.org/network/protocol/about;1?what=rpcontinued",
