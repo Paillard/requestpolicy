@@ -25,7 +25,7 @@ const Ci = Components.interfaces;
 const Cc = Components.classes;
 const Cu = Components.utils;
 
-let EXPORTED_SYMBOLS = ["rpService"];
+let EXPORTED_SYMBOLS = ["rpcService"];
 
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 Cu.import("resource://gre/modules/Services.jsm");
@@ -44,7 +44,7 @@ ScriptLoader.importModules([
 
 
 
-let rpService = (function() {
+let rpcService = (function() {
   let self = {};
 
   // /////////////////////////////////////////////////////////////////////////

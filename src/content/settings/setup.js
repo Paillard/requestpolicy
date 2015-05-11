@@ -61,7 +61,7 @@ function handleSubscriptionsChange() {
     'allow_sameorg':{},
     'deny_trackers':{}
   };
-  var userSubs = rpService.getSubscriptions();
+  var userSubs = rpcService.getSubscriptions();
   for (var subName in subs) {
     var subInfo = {};
     subInfo['official'] = {};

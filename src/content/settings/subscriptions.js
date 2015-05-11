@@ -66,7 +66,7 @@ function getAllSubscriptionElements() {
 }
 
 function updateDisplay() {
-  var userSubs = rpService.getSubscriptions();
+  var userSubs = rpcService.getSubscriptions();
   var subsInfo = userSubs.getSubscriptionInfo();
   var allSubElements = getAllSubscriptionElements();
   for (var i = 0, len = allSubElements.length; i < len; ++i) {
@@ -86,7 +86,7 @@ function updateDisplay() {
 
 
 function handleSubscriptionCheckboxChange(event) {
-  var userSubs = rpService.getSubscriptions();
+  var userSubs = rpcService.getSubscriptions();
 
   var subName = event.target.name;
   var enabled = event.target.checked;
