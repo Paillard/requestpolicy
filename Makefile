@@ -10,7 +10,7 @@
 # general variables
 #
 
-extension_name := requestpolicy
+extension_name := rpcontinued
 extension_uuid := rpcontinued@requestpolicy.org
 
 # ____________________________________

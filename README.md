@@ -28,7 +28,7 @@ sudo apt-get install make npm
 sudo npm install -g preprocessor
 ```
 
-After preparation, run `make` from the repository's root directory.  The [XPI](https://developer.mozilla.org/en-US/docs/XPI) file will be created at `dist/requestpolicy.xpi` and can be used for easy installation of RP into your web browser (e.g. Firefox).
+After preparation, run `make` from the repository's root directory.  The [XPI](https://developer.mozilla.org/en-US/docs/XPI) file will be created at `dist/rpcontinued.xpi` and can be used for easy installation of RP into your web browser (e.g. Firefox).
 
 
 ## License

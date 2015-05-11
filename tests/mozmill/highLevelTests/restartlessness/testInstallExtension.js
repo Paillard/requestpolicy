@@ -14,7 +14,7 @@ var prefs = require(rootDir + "lib/prefs");
 var amUtils = require("lib/addon-manager-utils");
 
 const BASE_URL = collector.addHttpResource(rpRootDir + "data/");
-const XPI_URL = BASE_URL + "dist/requestpolicy-unit-testing.xpi";
+const XPI_URL = BASE_URL + "dist/rpcontinued-unit-testing.xpi";
 
 
 function setupModule(aModule) {
