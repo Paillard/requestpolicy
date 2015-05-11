@@ -33,7 +33,7 @@ const envURI = "chrome://rpcontinued/content/lib/environment.jsm";
  * The Logger can't be used, as it might not be available.
  */
 function logSevereError(msg, e) {
-  dump("[RequestPolicy] [SEVERE] [ERROR] " + msg + " " + e +
+  dump("[RPContinued] [SEVERE] [ERROR] " + msg + " " + e +
        (e.stack ? ", stack was: " + e.stack : "") + "\n");
   Cu.reportError(e);
 }

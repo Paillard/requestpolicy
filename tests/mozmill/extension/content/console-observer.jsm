@@ -70,7 +70,7 @@ var ConsoleObserver = (function (self) {
 
     if (isRPException(msg)) {
       ++numErrors;
-      dump("[RequestPolicy] [Browser Console] " + msg + "\n");
+      dump("[RPContinued] [Browser Console] " + msg + "\n");
     }
   };
 

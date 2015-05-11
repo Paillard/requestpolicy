@@ -156,7 +156,7 @@ let Logger = (function() {
 
       let stack = (aError && aError.stack) ?
                   ", stack was:\n" + aError.stack : "";
-      self.printFunc("[RequestPolicy] [" + levelName + "] [" + typeName + "] "
+      self.printFunc("[RPContinued] [" + levelName + "] [" + typeName + "] "
           + aMessage + stack + "\n");
     }
   };

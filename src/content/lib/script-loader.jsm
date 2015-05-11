@@ -47,7 +47,7 @@ function getModuleURI(id) {
  * If the ScriptLoader catches an Exception, it will be a severe error.
  */
 function logSevereError(msg, e) {
-  dump("[RequestPolicy] [SEVERE] [ERROR] " + msg + " " + e +
+  dump("[RPContinued] [SEVERE] [ERROR] " + msg + " " + e +
        (e.stack ? ", stack was: " + e.stack : "") + "\n");
 }
 
