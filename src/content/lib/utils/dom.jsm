@@ -1,7 +1,7 @@
 /*
  * ***** BEGIN LICENSE BLOCK *****
  *
- * RequestPolicy - A Firefox extension for control over cross-site requests.
+ * RPContinued - A Firefox extension for control over cross-site requests.
  * Copyright (c) 2008-2012 Justin Samuel
  * Copyright (c) 2014-2015 Martin Kimmerle
  *
