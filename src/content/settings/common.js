@@ -14,7 +14,7 @@ ScriptLoader.importModules([
   "lib/logger",
   "lib/subscription",
   "lib/policy-manager",
-  "main/requestpolicy-service",
+  "main/rpcontinued-service",
   "lib/environment"
 ], this);
 
