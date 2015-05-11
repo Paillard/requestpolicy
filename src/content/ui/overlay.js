@@ -87,7 +87,7 @@ requestpolicy.overlay = (function() {
 
   // TODO: get back entry in context menu
   // https://github.com/RequestPolicyContinued/requestpolicy/issues/353
-  //let rpContextMenu = null;
+  //let rpcContextMenu = null;
 
   let toolbox = null;
 
@@ -120,7 +120,7 @@ requestpolicy.overlay = (function() {
         popupElement = $id("rp-popup");
 
         //statusbar = $id("status-bar");
-        //rpContextMenu = $id("requestpolicyContextMenu");
+        //rpcContextMenu = $id("rpcontinuedContextMenu");
         toolbox = $id("navigator-toolbox");
 
         var appInfo = Components.classes["@mozilla.org/xre/app-info;1"]
@@ -162,7 +162,7 @@ requestpolicy.overlay = (function() {
   };
 
   //setContextMenuEnabled : function(isEnabled) {
-  //  rpContextMenu.setAttribute("hidden", !isEnabled);
+  //  rpcContextMenu.setAttribute("hidden", !isEnabled);
   //},
 
   OverlayEnvironment.addShutdownFunction(
