@@ -90,9 +90,9 @@ let Logger = (function() {
   let types = self.TYPE_ALL;
 
   function updateLoggingSettings(rp) {
-    enabled = rpPrefBranch.getBoolPref("log");
-    level = rpPrefBranch.getIntPref("log.level");
-    types = rpPrefBranch.getIntPref("log.types");
+    enabled = rpcPrefBranch.getBoolPref("log");
+    level = rpcPrefBranch.getIntPref("log.level");
+    types = rpcPrefBranch.getIntPref("log.types");
   }
 
   /**
@@ -106,7 +106,7 @@ let Logger = (function() {
       return;
     }
 
-    // rpPrefBranch is available now.
+    // rpcPrefBranch is available now.
     ProcessEnvironment.obMan.observeRPPref(
         ["log"],
         function(subject, topic) {
@@ -141,8 +141,8 @@ let Logger = (function() {
     // #ifdef UNIT_TESTING
     if (aType === self.TYPE_ERROR || aLevel === self.LEVEL_SEVERE) {
       // increment the error count
-      let errorCount = rpPrefBranch.getIntPref("unitTesting.errorCount");
-      rpPrefBranch.setIntPref("unitTesting.errorCount", ++errorCount);
+      let errorCount = rpcPrefBranch.getIntPref("unitTesting.errorCount");
+      rpcPrefBranch.setIntPref("unitTesting.errorCount", ++errorCount);
       Services.prefs.savePrefFile(null);
 
       // log even if logging is disabled

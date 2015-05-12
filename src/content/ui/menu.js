@@ -37,7 +37,7 @@ requestpolicy.menu = (function() {
   // iMod: Alias for ScriptLoader.importModule
   let iMod = ScriptLoader.importModule;
   let {Logger} = iMod("lib/logger");
-  let {rpPrefBranch, Prefs} = iMod("lib/prefs");
+  let {rpcPrefBranch, Prefs} = iMod("lib/prefs");
   let {RequestProcessor} = iMod("lib/request-processor");
   let {PolicyManager} = iMod("lib/policy-manager");
   let {DomainUtil} = iMod("lib/utils/domains");
@@ -207,8 +207,8 @@ requestpolicy.menu = (function() {
 
     if (true === guiLocations) {
       // get prefs
-      var sorting = rpPrefBranch.getCharPref('menu.sorting');
-      var showNumRequests = rpPrefBranch.getBoolPref('menu.info.showNumRequests');
+      var sorting = rpcPrefBranch.getCharPref('menu.sorting');
+      var showNumRequests = rpcPrefBranch.getBoolPref('menu.info.showNumRequests');
 
       if (sorting == "numRequests") {
         values.sort(GUILocation.sortByNumRequestsCompareFunction);
@@ -246,7 +246,7 @@ requestpolicy.menu = (function() {
   self._populateOrigin = function() {
     self._originDomainnameItem.setAttribute("value", self._currentBaseDomain);
 
-    var showNumRequests = rpPrefBranch
+    var showNumRequests = rpcPrefBranch
         .getBoolPref('menu.info.showNumRequests');
 
     var props = self._getOriginGUILocationProperties();

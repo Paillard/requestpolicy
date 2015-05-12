@@ -17,20 +17,20 @@ Cu.import("resource://gre/modules/Services.jsm");
 
 
 function updateDisplay() {
-  var indicate = rpPrefBranch.getBoolPref('indicateBlockedObjects');
+  var indicate = rpcPrefBranch.getBoolPref('indicateBlockedObjects');
   $id('pref-indicateBlockedObjects').checked = indicate;
   $id('indicateBlockedImages-details').hidden = !indicate;
 
   $id('pref-dontIndicateBlacklistedObjects').checked =
-      !rpPrefBranch.getBoolPref('indicateBlacklistedObjects');
+      !rpcPrefBranch.getBoolPref('indicateBlacklistedObjects');
 
   $id('pref-autoReload').checked =
-      rpPrefBranch.getBoolPref('autoReload');
+      rpcPrefBranch.getBoolPref('autoReload');
 
   $id('pref-privateBrowsingPermanentWhitelisting').checked =
-      rpPrefBranch.getBoolPref('privateBrowsingPermanentWhitelisting');
+      rpcPrefBranch.getBoolPref('privateBrowsingPermanentWhitelisting');
 
-//  if (rpPrefBranch.getBoolPref('defaultPolicy.allow')) {
+//  if (rpcPrefBranch.getBoolPref('defaultPolicy.allow')) {
 //    var word = 'allow';
 //  } else {
 //    var word = 'block';
@@ -45,7 +45,7 @@ function onload() {
   elManager.addListener(
       $id('pref-indicateBlockedObjects'), 'change',
       function (event) {
-        rpPrefBranch.setBoolPref('indicateBlockedObjects', event.target.checked);
+        rpcPrefBranch.setBoolPref('indicateBlockedObjects', event.target.checked);
         Services.prefs.savePrefFile(null);
         updateDisplay();
       });
@@ -53,14 +53,14 @@ function onload() {
   elManager.addListener(
       $id('pref-dontIndicateBlacklistedObjects'), 'change',
       function (event) {
-        rpPrefBranch.setBoolPref('indicateBlacklistedObjects',
+        rpcPrefBranch.setBoolPref('indicateBlacklistedObjects',
                                  !event.target.checked);
         Services.prefs.savePrefFile(null);
         updateDisplay();
       });
 
   elManager.addListener($id('pref-autoReload'), 'change', function(event) {
-    rpPrefBranch.setBoolPref('autoReload', event.target.checked);
+    rpcPrefBranch.setBoolPref('autoReload', event.target.checked);
     Services.prefs.savePrefFile(null);
     updateDisplay();
   });
@@ -68,7 +68,7 @@ function onload() {
   elManager.addListener(
       $id('pref-privateBrowsingPermanentWhitelisting'), 'change',
       function (event) {
-        rpPrefBranch.setBoolPref('privateBrowsingPermanentWhitelisting',
+        rpcPrefBranch.setBoolPref('privateBrowsingPermanentWhitelisting',
                                  event.target.checked);
         Services.prefs.savePrefFile(null);
         updateDisplay();

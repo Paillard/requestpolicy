@@ -31,24 +31,24 @@ function updateDisplay() {
       rootPrefBranch.getBoolPref('network.prefetch-next');
 
   $id('pref-prefetch.link.disableOnStartup').checked =
-      rpPrefBranch.getBoolPref('prefetch.link.disableOnStartup');
+      rpcPrefBranch.getBoolPref('prefetch.link.disableOnStartup');
 
   $id('pref-prefetch.link.restoreDefaultOnUninstall').checked =
-      rpPrefBranch.getBoolPref('prefetch.link.restoreDefaultOnUninstall');
+      rpcPrefBranch.getBoolPref('prefetch.link.restoreDefaultOnUninstall');
 
   // DNS prefetch.
   $id('pref-dnsPrefetch').checked =
       !rootPrefBranch.getBoolPref('network.dns.disablePrefetch');
 
   $id('pref-prefetch.dns.disableOnStartup').checked =
-      rpPrefBranch.getBoolPref('prefetch.dns.disableOnStartup');
+      rpcPrefBranch.getBoolPref('prefetch.dns.disableOnStartup');
 
   $id('pref-prefetch.dns.restoreDefaultOnUninstall').checked =
-      rpPrefBranch.getBoolPref('prefetch.dns.restoreDefaultOnUninstall');
+      rpcPrefBranch.getBoolPref('prefetch.dns.restoreDefaultOnUninstall');
 
   // TODO: Create a class which acts as an API for preferences and which ensures
   // that the returned value is always a valid value for "string" preferences.
-  var sorting = rpPrefBranch.getCharPref('menu.sorting');
+  var sorting = rpcPrefBranch.getCharPref('menu.sorting');
 
   if (sorting == $id('sortByNumRequests').value) {
     $id('sortByNumRequests').checked = true;
@@ -65,7 +65,7 @@ function updateDisplay() {
   }
 
   $id('menu.info.showNumRequests').checked =
-      rpPrefBranch.getBoolPref('menu.info.showNumRequests');
+      rpcPrefBranch.getBoolPref('menu.info.showNumRequests');
 }
 
 
@@ -81,7 +81,7 @@ function onload() {
   elManager.addListener(
       $id('pref-prefetch.link.disableOnStartup'), 'change',
       function (event) {
-        rpPrefBranch.setBoolPref('prefetch.link.disableOnStartup',
+        rpcPrefBranch.setBoolPref('prefetch.link.disableOnStartup',
                                  event.target.checked);
         Services.prefs.savePrefFile(null);
       });
@@ -89,7 +89,7 @@ function onload() {
   elManager.addListener(
       $id('pref-prefetch.link.restoreDefaultOnUninstall'), 'change',
       function (event) {
-        rpPrefBranch.setBoolPref('prefetch.link.restoreDefaultOnUninstall', event.target.checked);
+        rpcPrefBranch.setBoolPref('prefetch.link.restoreDefaultOnUninstall', event.target.checked);
         Services.prefs.savePrefFile(null);
       });
 
@@ -102,19 +102,19 @@ function onload() {
   elManager.addListener(
       $id('pref-prefetch.dns.disableOnStartup'), 'change',
       function (event) {
-        rpPrefBranch.setBoolPref('prefetch.dns.disableOnStartup', event.target.checked);
+        rpcPrefBranch.setBoolPref('prefetch.dns.disableOnStartup', event.target.checked);
         Services.prefs.savePrefFile(null);
       });
 
   elManager.addListener(
       $id('pref-prefetch.dns.restoreDefaultOnUninstall'), 'change',
       function (event) {
-        rpPrefBranch.setBoolPref('prefetch.dns.restoreDefaultOnUninstall', event.target.checked);
+        rpcPrefBranch.setBoolPref('prefetch.dns.restoreDefaultOnUninstall', event.target.checked);
         Services.prefs.savePrefFile(null);
       });
 
   var sortingListener = function (event) {
-    rpPrefBranch.setCharPref('menu.sorting', event.target.value);
+    rpcPrefBranch.setCharPref('menu.sorting', event.target.value);
     Services.prefs.savePrefFile(null);
   };
   elManager.addListener($id('sortByNumRequests'), 'change', sortingListener);
@@ -124,7 +124,7 @@ function onload() {
   elManager.addListener(
       $id('menu.info.showNumRequests'), 'change',
       function (event) {
-        rpPrefBranch.setBoolPref('menu.info.showNumRequests', event.target.checked);
+        rpcPrefBranch.setBoolPref('menu.info.showNumRequests', event.target.checked);
         Services.prefs.savePrefFile(null);
       });
 

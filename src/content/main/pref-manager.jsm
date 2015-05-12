@@ -39,7 +39,7 @@ ScriptLoader.importModules([
   "lib/environment"
 ], globalScope);
 
-XPCOMUtils.defineLazyGetter(globalScope, "rpPrefBranch", function() {
+XPCOMUtils.defineLazyGetter(globalScope, "rpcPrefBranch", function() {
   return Services.prefs.getBranch("extensions.rpcontinued.")
       .QueryInterface(Ci.nsIPrefBranch2);
 });
@@ -57,9 +57,9 @@ let PrefManager = (function() {
 
   // TODO: move to bootstrap.js
   function handleUninstallOrDisable() {
-    var resetLinkPrefetch = rpPrefBranch.getBoolPref(
+    var resetLinkPrefetch = rpcPrefBranch.getBoolPref(
         "prefetch.link.restoreDefaultOnUninstall");
-    var resetDNSPrefetch = rpPrefBranch.getBoolPref(
+    var resetDNSPrefetch = rpcPrefBranch.getBoolPref(
         "prefetch.dns.restoreDefaultOnUninstall");
 
     if (resetLinkPrefetch) {
@@ -93,14 +93,14 @@ let PrefManager = (function() {
     // Link/DNS prefetching
     // --------------------
     // Disable link prefetch.
-    if (rpPrefBranch.getBoolPref("prefetch.link.disableOnStartup")) {
+    if (rpcPrefBranch.getBoolPref("prefetch.link.disableOnStartup")) {
       if (rootPrefBranch.getBoolPref("network.prefetch-next")) {
         rootPrefBranch.setBoolPref("network.prefetch-next", false);
         console.info("Disabled link prefetch.");
       }
     }
     // Disable DNS prefetch.
-    if (rpPrefBranch.getBoolPref("prefetch.dns.disableOnStartup")) {
+    if (rpcPrefBranch.getBoolPref("prefetch.dns.disableOnStartup")) {
       // network.dns.disablePrefetch only exists starting in Firefox 3.1 (and it
       // doesn't have a default value, at least in 3.1b2, but if and when it
       // does have a default it will be false).
@@ -121,8 +121,8 @@ let PrefManager = (function() {
       "temporarilyAllowedOriginsToDestinations"
     ];
     for (var i = 0; i < deletePrefs.length; i++) {
-      if (rpPrefBranch.prefHasUserValue(deletePrefs[i])) {
-        rpPrefBranch.clearUserPref(deletePrefs[i]);
+      if (rpcPrefBranch.prefHasUserValue(deletePrefs[i])) {
+        rpcPrefBranch.clearUserPref(deletePrefs[i]);
       }
     }
 

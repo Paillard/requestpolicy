@@ -42,7 +42,7 @@ ScriptLoader.importModules([
 
 ScriptLoader.defineLazyModuleGetters({
   "lib/prefs": [
-    "rpPrefBranch", /* global rpPrefBranch */
+    "rpcPrefBranch", /* global rpcPrefBranch */
     "rootPrefBranch" /* global rootPrefBranch */
   ]
 }, globalScope);
@@ -158,7 +158,7 @@ function ObserverManager(aEnv) {
   ObserverManager.prototype.observeRPPref = function(aDomains, aCallback) {
     let self = this;
     aDomains.forEach(function(domain) {
-      self.observeSinglePrefBranch(rpPrefBranch, domain, aCallback);
+      self.observeSinglePrefBranch(rpcPrefBranch, domain, aCallback);
     });
   };
   ObserverManager.prototype.observeRootPref = function(aDomains, aCallback) {

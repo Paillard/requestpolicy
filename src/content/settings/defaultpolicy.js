@@ -19,7 +19,7 @@ Cu.import("resource://gre/modules/Services.jsm");
 
 
 function updateDisplay() {
-  var defaultallow = rpPrefBranch.getBoolPref('defaultPolicy.allow');
+  var defaultallow = rpcPrefBranch.getBoolPref('defaultPolicy.allow');
   if (defaultallow) {
     $id('defaultallow').checked = true;
     $id('defaultdenysetting').hidden = true;
@@ -28,7 +28,7 @@ function updateDisplay() {
     $id('defaultdenysetting').hidden = false;
   }
 
-  var allowsamedomain = rpPrefBranch.getBoolPref('defaultPolicy.allowSameDomain');
+  var allowsamedomain = rpcPrefBranch.getBoolPref('defaultPolicy.allowSameDomain');
   $id('allowsamedomain').checked = allowsamedomain;
 }
 
@@ -43,7 +43,7 @@ function onload() {
       $id('defaultallow'), 'change',
       function (event) {
         var allow = event.target.checked;
-        rpPrefBranch.setBoolPref('defaultPolicy.allow', allow);
+        rpcPrefBranch.setBoolPref('defaultPolicy.allow', allow);
         Services.prefs.savePrefFile(null);
         // Reload all subscriptions because it's likely that different
         // subscriptions will now be active.
@@ -56,7 +56,7 @@ function onload() {
       $id('defaultdeny'), 'change',
       function (event) {
         var deny = event.target.checked;
-        rpPrefBranch.setBoolPref('defaultPolicy.allow', !deny);
+        rpcPrefBranch.setBoolPref('defaultPolicy.allow', !deny);
         Services.prefs.savePrefFile(null);
         // Reload all subscriptions because it's likely that different
         // subscriptions will now be active.
@@ -69,7 +69,7 @@ function onload() {
       $id('allowsamedomain'), 'change',
       function (event) {
         var allowSameDomain = event.target.checked;
-        rpPrefBranch.setBoolPref('defaultPolicy.allowSameDomain',
+        rpcPrefBranch.setBoolPref('defaultPolicy.allowSameDomain',
             allowSameDomain);
         Services.prefs.savePrefFile(null);
       });

@@ -126,12 +126,12 @@ let Utils = (function() {
   // bad smell...
   // get/set last/current RP version
   if (ProcessEnvironment.isMainProcess) {
-    self.info.lastRPVersion = rpPrefBranch.getCharPref("lastVersion");
+    self.info.lastRPVersion = rpcPrefBranch.getCharPref("lastVersion");
 
     self.info.curRPVersion = "0.0";
     // curRPVersion needs to be set asynchronously
     AddonManager.getAddonByID(C.EXTENSION_ID, function(addon) {
-      rpPrefBranch.setCharPref("lastVersion", addon.version);
+      rpcPrefBranch.setCharPref("lastVersion", addon.version);
       self.info.curRPVersion = addon.version;
       if (self.info.lastRPVersion != self.info.curRPVersion) {
         Services.prefs.savePrefFile(null);
@@ -142,11 +142,11 @@ let Utils = (function() {
   // bad smell...
   // get/set last/current app (e.g. firefox) version
   if (ProcessEnvironment.isMainProcess) {
-    self.info.lastAppVersion = rpPrefBranch.getCharPref("lastAppVersion");
+    self.info.lastAppVersion = rpcPrefBranch.getCharPref("lastAppVersion");
 
     let curAppVersion = Services.appinfo.version;
     self.info.curAppVersion = curAppVersion;
-    rpPrefBranch.setCharPref("lastAppVersion", curAppVersion);
+    rpcPrefBranch.setCharPref("lastAppVersion", curAppVersion);
 
     if (self.info.lastAppVersion != self.info.curAppVersion) {
       Services.prefs.savePrefFile(null);

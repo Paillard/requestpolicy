@@ -37,7 +37,7 @@ requestpolicy.classicmenu = (function() {
     Cu.import("chrome://rpcontinued/content/lib/script-loader.jsm", mod);
     return mod;
   }());
-  let {rpPrefBranch} = ScriptLoader.importModule("lib/prefs");
+  let {rpcPrefBranch} = ScriptLoader.importModule("lib/prefs");
   let {StringUtils} = ScriptLoader.importModule("lib/utils/strings");
 
 
@@ -46,7 +46,7 @@ requestpolicy.classicmenu = (function() {
   * be reloaded.
   */
   self._conditionallyReloadDocument = function() {
-    if (rpPrefBranch.getBoolPref("autoReload")) {
+    if (rpcPrefBranch.getBoolPref("autoReload")) {
       content.document.location.reload(false);
     }
   };

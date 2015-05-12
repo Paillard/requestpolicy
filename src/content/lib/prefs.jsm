@@ -25,7 +25,7 @@ const Ci = Components.interfaces;
 const Cc = Components.classes;
 const Cu = Components.utils;
 
-let EXPORTED_SYMBOLS = ['rpPrefBranch', 'rootPrefBranch', 'Prefs'];
+let EXPORTED_SYMBOLS = ['rpcPrefBranch', 'rootPrefBranch', 'Prefs'];
 
 Cu.import("resource://gre/modules/Services.jsm");
 
@@ -34,7 +34,7 @@ ScriptLoader.importModules(["lib/environment"], this);
 
 
 
-let rpPrefBranch = Services.prefs.getBranch("extensions.rpcontinued.")
+let rpcPrefBranch = Services.prefs.getBranch("extensions.rpcontinued.")
     .QueryInterface(Ci.nsIPrefBranch2);
 let rootPrefBranch = Services.prefs.getBranch("")
     .QueryInterface(Ci.nsIPrefBranch2);
@@ -56,17 +56,17 @@ let Prefs = (function() {
 
 
   function getRPBoolPref(aPrefName) {
-    return rpPrefBranch.getBoolPref(aPrefName);
+    return rpcPrefBranch.getBoolPref(aPrefName);
   }
   function setRPBoolPref(aPrefName, aValue) {
-    rpPrefBranch.setBoolPref(aPrefName, aValue);
+    rpcPrefBranch.setBoolPref(aPrefName, aValue);
   }
   // not needed yet
   //function getInvertedRPBoolPref(aPrefName) {
-  //  return !rpPrefBranch.getBoolPref(aPrefName);
+  //  return !rpcPrefBranch.getBoolPref(aPrefName);
   //}
   //function setInvertedRPBoolPref(aPrefName, aValue) {
-  //  rpPrefBranch.setBoolPref(aPrefName, !aValue);
+  //  rpcPrefBranch.setBoolPref(aPrefName, !aValue);
   //}
 
   /**
@@ -108,7 +108,7 @@ let Prefs = (function() {
 
   function isPrefEmpty(pref) {
     try {
-      let value = rpPrefBranch.getComplexValue(pref, Ci.nsISupportsString).data;
+      let value = rpcPrefBranch.getComplexValue(pref, Ci.nsISupportsString).data;
       return value == '';
     } catch (e) {
       return true;

@@ -198,8 +198,8 @@ common.prefStringToObj = function (prefString) {
 
 common.clearPref = function (pref) {
   try {
-    if (rpPrefBranch.prefHasUserValue(pref)) {
-      rpPrefBranch.clearUserPref(pref);
+    if (rpcPrefBranch.prefHasUserValue(pref)) {
+      rpcPrefBranch.clearUserPref(pref);
     }
   } catch (e) {
     Logger.dump('Clearing pref failed: ' + e.toString());

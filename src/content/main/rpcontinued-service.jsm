@@ -97,7 +97,7 @@ let rpcService = (function() {
 
   // TODO: move to window manager
   function showWelcomeWindow() {
-    if (!rpPrefBranch.getBoolPref("welcomeWindowShown")) {
+    if (!rpcPrefBranch.getBoolPref("welcomeWindowShown")) {
       var url = "about:rpcontinued?setup";
 
       var wm = Cc['@mozilla.org/appshell/window-mediator;1'].
@@ -112,7 +112,7 @@ let rpcService = (function() {
 
       _gBrowser.selectedTab = _gBrowser.addTab(url);
 
-      rpPrefBranch.setBoolPref("welcomeWindowShown", true);
+      rpcPrefBranch.setBoolPref("welcomeWindowShown", true);
       Services.prefs.savePrefFile(null);
     }
   }

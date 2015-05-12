@@ -111,7 +111,7 @@ let WindowUtils = (function() {
    */
   self.mayPermanentRulesBeAdded = function(aWindow) {
     return self.isWindowPrivate(aWindow) === false ||
-        rpPrefBranch.getBoolPref("privateBrowsingPermanentWhitelisting");
+        rpcPrefBranch.getBoolPref("privateBrowsingPermanentWhitelisting");
   };
 
 

@@ -44,7 +44,7 @@ requestpolicy.overlay = (function() {
   let {Environment, ProcessEnvironment} = iMod("lib/environment");
   let {ManagerForMessageListeners} = iMod("lib/manager-for-message-listeners");
   let {Logger} = iMod("lib/logger");
-  let {rpPrefBranch, Prefs} = iMod("lib/prefs");
+  let {rpcPrefBranch, Prefs} = iMod("lib/prefs");
   let {RequestProcessor} = iMod("lib/request-processor");
   let {PolicyManager} = iMod("lib/policy-manager");
   let {DomainUtil} = iMod("lib/utils/domains");
@@ -139,7 +139,7 @@ requestpolicy.overlay = (function() {
         // object's observerBlockedRequests() method will be called.
         RequestProcessor.addRequestObserver(self);
 
-        //self.setContextMenuEnabled(rpPrefBranch.getBoolPref("contextMenu"));
+        //self.setContextMenuEnabled(rpcPrefBranch.getBoolPref("contextMenu"));
 
         OverlayEnvironment.shutdownOnUnload(window);
         OverlayEnvironment.startup();
@@ -252,8 +252,8 @@ requestpolicy.overlay = (function() {
 
     let blockedURIs = {};
 
-    if (rpPrefBranch.getBoolPref("indicateBlockedObjects")) {
-      var indicateBlacklisted = rpPrefBranch
+    if (rpcPrefBranch.getBoolPref("indicateBlockedObjects")) {
+      var indicateBlacklisted = rpcPrefBranch
           .getBoolPref("indicateBlacklistedObjects");
 
       var rejectedRequests = RequestProcessor._rejectedRequests
@@ -989,7 +989,7 @@ requestpolicy.overlay = (function() {
   self.onPopupHidden = function(event) {
     var rulesChanged = requestpolicy.menu.processQueuedRuleChanges();
     if (rulesChanged || self._needsReloadOnMenuClose) {
-      if (rpPrefBranch.getBoolPref("autoReload")) {
+      if (rpcPrefBranch.getBoolPref("autoReload")) {
         let mm = gBrowser.selectedBrowser.messageManager;
         mm.sendAsyncMessage(C.MM_PREFIX + "reload");
       }

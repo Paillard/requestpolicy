@@ -28,7 +28,7 @@ function showConfigure() {
 }
 
 function handleDefaultPolicyChange() {
-  rpPrefBranch.setBoolPref('defaultPolicy.allow',
+  rpcPrefBranch.setBoolPref('defaultPolicy.allow',
       $id("defaultallow").checked);
   Services.prefs.savePrefFile(null);
   setAllowSameDomainBlockDisplay();
@@ -36,7 +36,7 @@ function handleDefaultPolicyChange() {
 }
 
 function handleAllowSameDomainChange() {
-  rpPrefBranch.setBoolPref('defaultPolicy.allowSameDomain',
+  rpcPrefBranch.setBoolPref('defaultPolicy.allowSameDomain',
       $id("allowsamedomain").checked);
   Services.prefs.savePrefFile(null);
 }
@@ -96,7 +96,7 @@ function getArguments(args) {
 }*/
 
 function onload() {
-  var lastRPVersion = rpPrefBranch.getCharPref("lastVersion");
+  var lastRPVersion = rpcPrefBranch.getCharPref("lastVersion");
 
   // Populate the form values based on the user's current settings.
   // If the use has just upgrade from an 0.x version, populate based on the old
@@ -106,8 +106,8 @@ function onload() {
   if (lastRPVersion &&
       Services.vc.compare(lastRPVersion, '0.0') > 0 &&
       Services.vc.compare(lastRPVersion, '1.0.0a8') <= 0) {
-    if (rpPrefBranch.prefHasUserValue('uriIdentificationLevel')) {
-      var identLevel = rpPrefBranch.getIntPref('uriIdentificationLevel');
+    if (rpcPrefBranch.prefHasUserValue('uriIdentificationLevel')) {
+      var identLevel = rpcPrefBranch.getIntPref('uriIdentificationLevel');
     } else {
       var identLevel = 1;
     }
@@ -135,14 +135,14 @@ function onload() {
     // Skip the welcome screen.
     showConfigure();
   } else {
-    var defaultAllow = rpPrefBranch.getBoolPref('defaultPolicy.allow');
+    var defaultAllow = rpcPrefBranch.getBoolPref('defaultPolicy.allow');
     $id("defaultallow").checked = !!defaultAllow;
     $id("defaultdeny").checked = !defaultAllow;
     if (!defaultAllow) {
       $('#allowsamedomainblock').css('display', 'block');
     }
     $id("allowsamedomain").checked =
-        rpPrefBranch.getBoolPref('defaultPolicy.allowSameDomain');
+        rpcPrefBranch.getBoolPref('defaultPolicy.allowSameDomain');
     // Subscriptions are only simple here if we assume the user won't open the
     // setup window again after changing their individual subscriptions through
     // the preferences. So, let's assume that as the worst case is that the setup
