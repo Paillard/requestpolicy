@@ -46,7 +46,7 @@ function getOctalInt() {
 const octal444 = getOctalInt(4,4,4); // octal: 0444
 const octal700 = getOctalInt(7,0,0); // octal: 0700
 
-const REQUESTPOLICY_DIR = "requestpolicy";
+const REQUESTPOLICY_DIR = "requestpolicy-continued";
 
 var FileUtil = {
 
