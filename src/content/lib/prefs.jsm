@@ -34,7 +34,7 @@ ScriptLoader.importModules(["lib/environment"], this);
 
 
 
-let rpPrefBranch = Services.prefs.getBranch("extensions.requestpolicy.")
+let rpPrefBranch = Services.prefs.getBranch("extensions.rpcontinued.")
     .QueryInterface(Ci.nsIPrefBranch2);
 let rootPrefBranch = Services.prefs.getBranch("")
     .QueryInterface(Ci.nsIPrefBranch2);

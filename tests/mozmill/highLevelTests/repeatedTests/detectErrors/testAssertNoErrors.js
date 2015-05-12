@@ -23,7 +23,7 @@ function teardownModule(aModule) {
 
 
 function testAssertNoErrors() {
-  const prefName = "extensions.requestpolicy.unitTesting.errorCount";
+  const prefName = "extensions.rpcontinued.unitTesting.errorCount";
   assert.equal(prefs.getPref(prefName, -1), 0,
                "No error has been logged in RequestPolicy so far.");
 

@@ -38,6 +38,6 @@ function testDetectingErrors() {
  * Get the preference. If it doesn't exist, -1 will be returned.
  */
 function getErrorCount() {
-  const prefName = "extensions.requestpolicy.unitTesting.errorCount";
+  const prefName = "extensions.rpcontinued.unitTesting.errorCount";
   return prefs.getPref(prefName, -1);
 }

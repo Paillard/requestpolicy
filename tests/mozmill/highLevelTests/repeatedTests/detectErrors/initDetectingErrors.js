@@ -22,6 +22,6 @@ function teardownModule(aModule) {
 
 
 function testInitDetectingErros() {
-  prefs.setPref("extensions.requestpolicy.unitTesting.errorCount", 0);
+  prefs.setPref("extensions.rpcontinued.unitTesting.errorCount", 0);
   Services.prefs.savePrefFile(null);
 }

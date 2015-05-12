@@ -41,7 +41,7 @@ function teardownModule(aModule) {
 function testInstallExtension() {
   // Reset the 'welcomeWindowShown' pref so that the setup will be
   // opened the next time the extension is installed.
-  prefs.prefBranch.clearUserPref("extensions.requestpolicy.welcomeWindowShown")
+  prefs.prefBranch.clearUserPref("extensions.rpcontinued.welcomeWindowShown")
 
   // The setup tab has to be closed for later being sure that
   // *this* installation opened the tab.

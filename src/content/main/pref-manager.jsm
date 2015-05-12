@@ -40,7 +40,7 @@ ScriptLoader.importModules([
 ], globalScope);
 
 XPCOMUtils.defineLazyGetter(globalScope, "rpPrefBranch", function() {
-  return Services.prefs.getBranch("extensions.requestpolicy.")
+  return Services.prefs.getBranch("extensions.rpcontinued.")
       .QueryInterface(Ci.nsIPrefBranch2);
 });
 XPCOMUtils.defineLazyGetter(globalScope, "rootPrefBranch", function() {
