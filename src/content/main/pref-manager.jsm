@@ -113,18 +113,16 @@ let PrefManager = (function() {
 
 
     // ================================
-    // Clean up old, unused prefs (removed in 0.2.0).
-    // ----------------------------------------------
-    let deletePrefs = [
-      "temporarilyAllowedOrigins",
-      "temporarilyAllowedDestinations",
-      "temporarilyAllowedOriginsToDestinations"
-    ];
-    for (var i = 0; i < deletePrefs.length; i++) {
-      if (rpcPrefBranch.prefHasUserValue(deletePrefs[i])) {
-        rpcPrefBranch.clearUserPref(deletePrefs[i]);
-      }
-    }
+    // Clean up old, unused prefs
+    // --------------------------
+    // uncomment as soon as a preference gets deprecated
+    //let deletePrefs = [
+    //];
+    //for (var i = 0; i < deletePrefs.length; i++) {
+    //  if (rpcPrefBranch.prefHasUserValue(deletePrefs[i])) {
+    //    rpcPrefBranch.clearUserPref(deletePrefs[i]);
+    //  }
+    //}
 
 
     Services.prefs.savePrefFile(null);
