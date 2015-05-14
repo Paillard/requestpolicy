@@ -305,7 +305,7 @@ let RequestProcessor = (function(self) {
     var window = browser.ownerGlobal;
 
     Utils.tryMultipleTimes(function() {
-      var showNotification = Utils.getObjectPath(window, 'requestpolicy',
+      var showNotification = Utils.getObjectPath(window, 'rpcontinued',
           'overlay', '_showRedirectNotification');
       if (!showNotification) {
         return false;
