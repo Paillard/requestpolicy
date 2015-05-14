@@ -46,7 +46,7 @@ function getOctalInt() {
 const octal444 = getOctalInt(4,4,4); // octal: 0444
 const octal700 = getOctalInt(7,0,0); // octal: 0700
 
-const REQUESTPOLICY_DIR = "requestpolicy-continued";
+const RPC_DIR = "requestpolicy-continued";
 
 var FileUtil = {
 
@@ -174,7 +174,7 @@ var FileUtil = {
   getRPUserDir : function(subdir1, subdir2, subdir3) {
     var profileDir = Services.dirsvc.get("ProfD", Ci.nsIFile);
     var file = profileDir.clone();
-    file.appendRelativePath(REQUESTPOLICY_DIR);
+    file.appendRelativePath(RPC_DIR);
     if(!file.exists()) {
       file.create(Ci.nsIFile.DIRECTORY_TYPE, octal700);
     }
