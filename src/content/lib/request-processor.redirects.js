@@ -270,7 +270,7 @@ let RequestProcessor = (function(self) {
 
             // Maybe we just record the clicked link and each step in between as
             // an allowed request, and the final blocked one as a blocked request.
-            // That is, make it show up in the requestpolicy menu like anything
+            // That is, make it show up in the RPC menu like anything
             // else.
             // We set the "isInsert" parameter so we don't clobber the existing
             // info about allowed and deleted requests.

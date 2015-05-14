@@ -25,7 +25,7 @@ function teardownModule(aModule) {
 function testAssertNoErrors() {
   const prefName = "extensions.rpcontinued.unitTesting.errorCount";
   assert.equal(prefs.getPref(prefName, -1), 0,
-               "No error has been logged in RequestPolicy so far.");
+               "No error has been logged in RPContinued so far.");
 
   assert.equal(ConsoleObserver.getNumErrors(), 0,
                "The Console Observer didn't register any error or " +

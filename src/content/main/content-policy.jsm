@@ -106,14 +106,14 @@ let PolicyImplementation = (function() {
     // ----------------------
     // It's possible (or always true) that async functions
     // get called *after* the addon finished shutting down.
-    // After the shutdown RequestPolicy's modules and
+    // After the shutdown RPC's modules and
     // functions can't be used anymore, the modules have
     // been unloaded already. There might be still some
     // objects or closures, but it's unreliable to use
     // them.
     // However, the shouldLoad function needs many of
-    // RequestPolicy's other modules and functions. So any
-    // call to RP's `shouldLoad` might cause exceptions,
+    // RPC's other modules and functions. So any
+    // call to RPC's `shouldLoad` might cause exceptions,
     // given that the call happens between now and the
     // time when the factory is actually unregistered.
 

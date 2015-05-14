@@ -1,7 +1,7 @@
 /*
  * ***** BEGIN LICENSE BLOCK *****
  *
- * RPC Dev Helper - A helper add-on for RequestPolicy development.
+ * RPC Dev Helper - A helper add-on for RPContinued development.
  * Copyright (c) 2015 Martin Kimmerle
  *
  * This program is free software: you can redistribute it and/or modify it under
@@ -47,7 +47,7 @@ function isRPException(aMessage) {
 /**
  * ConsoleObserver observes all messages sent to the
  * Browser Console and detects errors caused by
- * RequestPolicy.
+ * RPContinued.
  */
 var ConsoleObserver = (function (self) {
   let numErrors = 0;

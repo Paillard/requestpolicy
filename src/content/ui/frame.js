@@ -117,7 +117,7 @@ Components.utils.import("resource://gre/modules/devtools/Console.jsm");
   function mouseClicked(event) {
     // If mozInputSource is undefined or zero, then this was a javascript-generated event.
     // If there is a way to forge mozInputSource from javascript, then that could be used
-    // to bypass RequestPolicy.
+    // to bypass RPContinued.
     if (!event.mozInputSource) {
       return;
     }

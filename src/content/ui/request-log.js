@@ -62,7 +62,7 @@ window.requestpolicy.requestLog = (function (self) {
 
     showLogIsEmptyMessage();
 
-    // Give the requestpolicy overlay direct access to the the request log.
+    // Give the RPC overlay direct access to the the request log.
     window.parent.requestpolicy.overlay.requestLog = self;
   }
   function showLogIsEmptyMessage() {

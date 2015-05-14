@@ -61,8 +61,8 @@ let LEVELS = {
   // Essential functions do tasks that must be run first on startup and last
   // on shutdown, that is they do tasks that are requirements for the Backend.
   "ESSENTIAL": 1,
-  // Backend functions start up/shut down main parts of RequestPolicy, but
-  // they do not enable RequestPolicy at all.
+  // Backend functions start up/shut down main parts of RPC, but
+  // they do not enable RPC at all.
   "BACKEND": 2,
   // Interface functions enable/disable external as well as internal interfaces,
   // e.g. Event Listeners, Message Listeners, Observers, Factories.

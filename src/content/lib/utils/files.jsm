@@ -163,8 +163,9 @@ var FileUtil = {
   },
 
   /**
-   * Returns a file object for a path relative to the user's "requestpolicy"
-   * under their profile directory. The "requestpolicy" directory is created if
+   * Returns a file object for a path relative to the user's
+   * "requestpolicy-continued" directory, which is in their profile
+   * directory. The "requestpolicy-continued" directory is created if
    * it doesn't already exist. Each subdir, if specified, is created if it does
    * not exist.
    *

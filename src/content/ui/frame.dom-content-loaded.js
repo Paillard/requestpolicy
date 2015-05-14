@@ -161,7 +161,7 @@ let ManagerForDOMContentLoaded = (function() {
 
       // TODO: Register meta redirects so we can tell which blocked requests
       // were meta redirects in the statusbar menu.
-      // TODO: move this logic to the requestpolicy service.
+      // TODO: move this logic to rpcService.
 
       // The dest may be empty if the origin is what should be refreshed. This
       // will be handled by DomainUtil.determineRedirectUri().
@@ -264,7 +264,7 @@ let ManagerForDOMContentLoaded = (function() {
   }
 
   /**
-   * Wraps the window's open() and openDialog() methods so that RequestPolicy
+   * Wraps the window's open() and openDialog() methods so that RPContinued
    * can know the origin and destination URLs of the window being opened. Assume
    * that if window.open() calls have made it this far, it's a window the user
    * wanted open (e.g. they have allowed the popup). Unfortunately, this method

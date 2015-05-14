@@ -160,7 +160,7 @@ let ProcessEnvironment = (function() {
     /**
      * This function will be called when the paren process
      * sends the shutdown message. After this function has
-     * finished, RequestPolicy has cleaned up itself from
+     * finished, RPC has cleaned up itself from
      * that child process.
      */
     function receiveShutdownMessage() {

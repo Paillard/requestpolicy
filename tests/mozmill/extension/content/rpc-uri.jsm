@@ -1,7 +1,7 @@
 /*
  * ***** BEGIN LICENSE BLOCK *****
  *
- * RPC Dev Helper - A helper add-on for RequestPolicy development.
+ * RPC Dev Helper - A helper add-on for RPContinued development.
  * Copyright (c) 2015 Martin Kimmerle
  *
  * This program is free software: you can redistribute it and/or modify it under

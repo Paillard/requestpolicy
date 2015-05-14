@@ -468,7 +468,7 @@ let RequestProcessor = (function(self) {
 
       if (request.aRequestOrigin.scheme == "moz-nullprincipal") {
         // Before RP has been forked, there was a hack: in case of a request
-        // with the origin's scheme being 'moz-nullprincipal', RequestPolicy
+        // with the origin's scheme being 'moz-nullprincipal', RPC
         // used the documentURI of the request's context as the "real" origin
         // URI.
         //   (Note: RP assuemed that the context is always a document, but this
@@ -488,7 +488,7 @@ let RequestProcessor = (function(self) {
         // * nsIPrincipal:
         //   -> https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XPCOM/Reference/Interface/nsIPrincipal
         //
-        // * discussion about RequestPolicy with regard to detecting that
+        // * discussion about RPC with regard to detecting that
         //   something has been entered in the url-bar -- it's the Mozilla Bug
         //   about adding `aRequestPrincipal` to `shouldLoad()` and it's
         //   milestone was Firefox 16.
@@ -664,7 +664,7 @@ let RequestProcessor = (function(self) {
           // requests that should be), I'd put it here. Doing this, however,
           // saves a lot of blocking of legitimate requests from extensions
           // that originate from their xul files. If you're reading this and
-          // you know of a way to use this to evade RequestPolicy, please let
+          // you know of a way to use this to evade RPC, please let
           // me know, I will be very grateful.
           request.requestResult = new RequestResult(true,
               REQUEST_REASON_USER_ACTION);

@@ -134,7 +134,7 @@ requestpolicy.overlay = (function() {
           popupElement.setAttribute("position", "after_end");
         }
 
-        // Register this window with the requestpolicy service so that we can be
+        // Register this window to the RequestProcessor so that we can be
         // notified of blocked requests. When blocked requests happen, this
         // object's observerBlockedRequests() method will be called.
         RequestProcessor.addRequestObserver(self);
@@ -740,7 +740,7 @@ requestpolicy.overlay = (function() {
    * - openLink()
    * - openLinkInPrivateWindow()
    * - openLinkInCurrent()
-   * so that RequestPolicy can register a link-click.
+   * so that RPContinued can register a link-click.
    *
    * The original methods are defined in Firefox' nsContextMenu.js:
    * http://mxr.mozilla.org/mozilla-central/source/browser/base/content/nsContextMenu.js
@@ -783,7 +783,7 @@ requestpolicy.overlay = (function() {
   };
 
   /**
-   * Modifies the addTab() function so that RequestPolicy can be aware of the
+   * Modifies the addTab() function so that RPC can be aware of the
    * tab being opened. Assume that if the tab is being opened, it was an action
    * the user wanted (e.g. the equivalent of a link click). Using a TabOpen
    * event handler, I was unable to determine the referrer, so that approach
@@ -832,7 +832,7 @@ requestpolicy.overlay = (function() {
       let addTabString = gBrowser.addTab.toString();
 
       // define the regular expression that should find the existing code
-      // line that RequestPolicy added.
+      // line that RPC added.
       let codeLineRE = /(\n    )?requestpolicy\.overlay\.tabAdded\(arguments\[0\], arguments\[1\]\);/;
 
       // use the regular expression
