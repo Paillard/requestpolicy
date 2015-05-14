@@ -563,8 +563,8 @@ requestpolicy.menu = (function() {
   };
 
   self._processRuleSelection = function(item) {
-    var ruleData = item.requestpolicyRuleData;
-    var ruleAction = item.requestpolicyRuleAction;
+    var ruleData = item.rpcontinuedRuleData;
+    var ruleAction = item.rpcontinuedRuleAction;
 
     if (item.getAttribute('selected-rule') == 'true') {
       item.setAttribute('selected-rule', 'false');
@@ -920,8 +920,8 @@ requestpolicy.menu = (function() {
       ruleAction, cssClass) {
     var label = StringUtils.$str(fmtStrName, fmtStrArgs);
     var item = self._addListItem(list, 'rpc-od-item', label);
-    item.requestpolicyRuleData = ruleData;
-    item.requestpolicyRuleAction = ruleAction;
+    item.rpcontinuedRuleData = ruleData;
+    item.rpcontinuedRuleAction = ruleAction;
     //var statustext = ''; // TODO
     item.setAttribute('class', 'rpc-od-item ' + cssClass);
     var canonicalRule = Ruleset.rawRuleToCanonicalString(ruleData);

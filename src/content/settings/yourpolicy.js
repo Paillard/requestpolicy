@@ -82,8 +82,8 @@ function deleteRule(event) {
   //       unique identifier. Currently, if there's exactly the same rule twice,
   //       (one of them might be a temporary rule), both will get removed.
   var anchor = $(event.target);
-  var ruleAction = anchor.data('requestpolicyRuleAction');
-  var ruleData = anchor.data('requestpolicyRuleData');
+  var ruleAction = anchor.data('rpcontinuedRuleAction');
+  var ruleData = anchor.data('rpcontinuedRuleData');
   if (ruleAction == 'allow') {
     PolicyManager.removeAllowRule(ruleData);
   } else {
@@ -121,8 +121,8 @@ function addRulesTableRow(table, ruleAction, origin, dest, ruleData, source, rea
   if (!readOnly) {
     var anchor = $('<a>');
     anchor.text('x').addClass('deleterule');
-    anchor.data('requestpolicyRuleAction', ruleAction);
-    anchor.data('requestpolicyRuleData', ruleData);
+    anchor.data('rpcontinuedRuleAction', ruleAction);
+    anchor.data('rpcontinuedRuleData', ruleData);
     anchor.click(deleteRule);
     row.append($('<td>').append(anchor));
   } else {
