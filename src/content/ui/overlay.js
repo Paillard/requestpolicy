@@ -282,16 +282,16 @@ requestpolicy.overlay = (function() {
       }
     }
 
-    if ("requestpolicy" in browser &&
-        documentURI in browser.requestpolicy.blockedRedirects) {
+    if ("rpcontinued" in browser &&
+        documentURI in browser.rpcontinued.blockedRedirects) {
       // bad smell: do not save blocked requests in the <browser> obj
-      var dest = browser.requestpolicy.blockedRedirects[documentURI];
+      var dest = browser.rpcontinued.blockedRedirects[documentURI];
       Logger.warning(Logger.TYPE_HEADER_REDIRECT,
           "Showing notification for blocked redirect. To <" + dest +
           "> " + "from <" + documentURI + ">");
       self._showRedirectNotification(browser, dest);
 
-      delete browser.requestpolicy.blockedRedirects[documentURI];
+      delete browser.rpcontinued.blockedRedirects[documentURI];
     }
 
     // send the list of blocked URIs back to the frame script

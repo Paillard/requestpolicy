@@ -236,8 +236,8 @@ let RequestProcessor = (function(self) {
           // save all blocked redirects directly in the browser element. the
           // blocked elements will be checked later when the DOM content
           // finished loading.
-          browser.requestpolicy = browser.requestpolicy || {blockedRedirects: {}};
-          browser.requestpolicy.blockedRedirects[originURI] = destURI;
+          browser.rpcontinued = browser.rpcontinued || {blockedRedirects: {}};
+          browser.rpcontinued.blockedRedirects[originURI] = destURI;
         }
 
         // Cancel the request. As of Fx 37, this causes the location bar to
