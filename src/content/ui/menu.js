@@ -537,6 +537,30 @@ requestpolicy.menu = (function() {
   };
 
 
+  function openDomainInfoTab(item) {
+    var domain = null;
+
+    if (item.value) {
+      domain = item.value;
+    } else {
+      let domainLabel = item.querySelector(".domainname");
+
+      if (domainLabel !== null) {
+        domain = domainLabel.value;
+      }
+    }
+
+    if (domain !== null) {
+      window.openUILinkIn("https://www.mywot.com/en/scorecard/" + domain,
+                          "tab",
+                          {
+                            relatedToCurrent: true,
+                            inBackground: true
+                          });
+    }
+  }
+
+
   self.itemSelected = function(event) {
     var item = event.target;
     // TODO: rather than compare IDs, this should probably compare against
@@ -548,10 +572,16 @@ requestpolicy.menu = (function() {
     }
     if (item.id == 'rp-origin' ||
         item.parentNode.id == 'rp-other-origins-list') {
+      if (event.button === 1) {
+        openDomainInfoTab(item);
+      }
       self._activateOriginItem(item);
     } else if (item.parentNode.id == 'rp-blocked-destinations-list' ||
                item.parentNode.id == 'rp-mixed-destinations-list' ||
                item.parentNode.id == 'rp-allowed-destinations-list') {
+      if (event.button === 1) {
+        openDomainInfoTab(item);
+      }
       self._activateDestinationItem(item);
     } else if (item.parentNode.id == 'rp-rule-options' ||
                item.parentNode.id == 'rp-rules-remove' ||
