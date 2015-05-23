@@ -123,10 +123,12 @@ common.getOldRulesAsNewRules = function (addHostWildcard) {
     entry['o'] = {};
     if (DomainUtil.isValidUri(origin)) {
       var uriObj = DomainUtil.getUriObject(origin);
-      entry['o']['h'] = uriObj.host;
       entry['o']['s'] = uriObj.scheme;
-      if (uriObj.port != -1) {
-        entry['o']['port'] = uriObj.port;
+      if (DomainUtil.uriObjHasHost(uriObj)) {
+        entry['o']['h'] = uriObj.host;
+        if (uriObj.port !== -1) {
+          entry['o']['port'] = uriObj.port;
+        }
       }
     } else {
       entry['o']['h'] = origin.split('/')[0];
@@ -142,10 +144,12 @@ common.getOldRulesAsNewRules = function (addHostWildcard) {
     entry['d'] = {};
     if (DomainUtil.isValidUri(dest)) {
       var uriObj = DomainUtil.getUriObject(dest);
-      entry['d']['h'] = uriObj.host;
       entry['d']['s'] = uriObj.scheme;
-      if (uriObj.port != -1) {
-        entry['d']['port'] = uriObj.port;
+      if (DomainUtil.uriObjHasHost(uriObj)) {
+        entry['d']['h'] = uriObj.host;
+        if (uriObj.port !== -1) {
+          entry['d']['port'] = uriObj.port;
+        }
       }
     } else {
       entry['d']['h'] = dest.split('/')[0];
@@ -166,10 +170,12 @@ common.getOldRulesAsNewRules = function (addHostWildcard) {
 
     if (DomainUtil.isValidUri(origin)) {
       var uriObj = DomainUtil.getUriObject(origin);
-      entry['o']['h'] = uriObj.host;
       entry['o']['s'] = uriObj.scheme;
-      if (uriObj.port != -1) {
-        entry['o']['port'] = uriObj.port;
+      if (DomainUtil.uriObjHasHost(uriObj)) {
+        entry['o']['h'] = uriObj.host;
+        if (uriObj.port !== -1) {
+          entry['o']['port'] = uriObj.port;
+        }
       }
     } else {
       entry['o']['h'] = origin.split('/')[0];
@@ -180,10 +186,12 @@ common.getOldRulesAsNewRules = function (addHostWildcard) {
 
     if (DomainUtil.isValidUri(dest)) {
       var uriObj = DomainUtil.getUriObject(dest);
-      entry['d']['h'] = uriObj.host;
       entry['d']['s'] = uriObj.scheme;
-      if (uriObj.port != -1) {
-        entry['d']['port'] = uriObj.port;
+      if (DomainUtil.uriObjHasHost(uriObj)) {
+        entry['d']['h'] = uriObj.host;
+        if (uriObj.port !== -1) {
+          entry['d']['port'] = uriObj.port;
+        }
       }
     } else {
       entry['d']['h'] = dest.split('/')[0];
