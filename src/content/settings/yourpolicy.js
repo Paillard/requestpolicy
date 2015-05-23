@@ -65,8 +65,8 @@ function addRules(entries, source, filter, readOnly) {
   for (var entryType in entries) {
     for (var i = 0; i < entries[entryType].length; i++) {
       var entry = entries[entryType][i];
-      var origin = entry['o'] ? ruleDataPartToDisplayString(entry['o']) : '';
-      var dest = entry['d'] ? ruleDataPartToDisplayString(entry['d']) : '';
+      var origin = entry['o'] ? common.ruleDataPartToDisplayString(entry['o']) : '';
+      var dest = entry['d'] ? common.ruleDataPartToDisplayString(entry['d']) : '';
       if (filter) {
         if (origin.indexOf(filter) == -1 && dest.indexOf(filter) == -1) {
           continue;
@@ -128,26 +128,6 @@ function addRulesTableRow(table, ruleAction, origin, dest, ruleData, source, rea
   } else {
     row.append($('<td>'));
   }
-}
-
-// TODO: remove code duplication with menu.js
-function ruleDataPartToDisplayString(ruleDataPart) {
-  var str = "";
-  if (ruleDataPart["s"]) {
-    str += ruleDataPart["s"] + ":";
-
-    if (ruleDataPart["h"]) {
-      // In case no host has been specified, do not show the
-      // two slashes, as it might be an URI without a host.
-      str += "//";
-    }
-  }
-  str += ruleDataPart["h"] || "*";
-  if (ruleDataPart["port"]) {
-    str += ":" + ruleDataPart["port"];
-  }
-  // TODO: path
-  return str;
 }
 
 function addRule() {

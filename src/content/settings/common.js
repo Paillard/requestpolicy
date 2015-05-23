@@ -87,6 +87,27 @@ common.switchSubscriptionPolicies = function () {
   }
 };
 
+// TODO: remove code duplication with menu.js
+common.ruleDataPartToDisplayString = function (ruleDataPart) {
+  var str = "";
+  if (ruleDataPart["s"]) {
+    str += ruleDataPart["s"] + ":";
+
+    if (ruleDataPart["h"]) {
+      // In case no host has been specified, do not show the
+      // two slashes, as it might be an URI without a host.
+      str += "//";
+    }
+  }
+  str += ruleDataPart["h"] || "*";
+  if (ruleDataPart["port"]) {
+    str += ":" + ruleDataPart["port"];
+  }
+  // TODO: path
+  return str;
+};
+
+
 common.getOldRulesAsNewRules = function (addHostWildcard) {
   var origins = common.getPrefObj('allowedOrigins');
   var destinations = common.getPrefObj('allowedDestinations');
